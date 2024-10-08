@@ -1,0 +1,8 @@
+[27-Mar-2021 18:16:02 America/New_York] PHP Fatal error:  Uncaught Error: Using $this when not in object context in /home/xcrujkmf/public_html/xcrud/themes/minimal/xcrud_container.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/xcrujkmf/public_html/xcrud/themes/minimal/xcrud_container.php on line 1
+[27-Mar-2021 18:16:06 America/New_York] PHP Fatal error:  Uncaught Error: Using $this when not in object context in /home/xcrujkmf/public_html/xcrud/themes/minimal/xcrud_detail_view.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/xcrujkmf/public_html/xcrud/themes/minimal/xcrud_detail_view.php on line 1
