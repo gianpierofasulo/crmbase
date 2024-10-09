@@ -4,8 +4,10 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\testController;
 use App\Http\Controllers\xSimpleController;
 
-
+// FPDF
 use App\Http\Controllers\testFpdfController;
+// phPmailer
+use App\Http\Controllers\MailController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -29,6 +31,6 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/generate-pdf', [testFpdfController::class, 'generatePdf']);
 
-
+Route::get('/send-email', [MailController::class, 'sendEmail']);
 
 require __DIR__.'/auth.php';
