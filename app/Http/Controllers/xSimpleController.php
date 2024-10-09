@@ -10,8 +10,11 @@ class xSimpleController extends Controller
     {
 
         $xcrud = Xcrud_get_instance();
-        $xcrud->table("sessions");
+        $xcrud->table("users");
+        $xcrud->before_insert('hash_password');
         $render = $xcrud->render();
+
+
 
         return view('xcrud_simple', ['render' => $render]);
 

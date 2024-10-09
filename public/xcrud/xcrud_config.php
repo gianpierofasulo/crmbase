@@ -32,7 +32,7 @@
 class Xcrud_config
 {
     // default connection
-    public static $dbname = 'livescreencrm'; // Your database name
+    public static $dbname = 'crmbase'; // Your database name
     public static $dbuser = 'root'; // Your database username
     public static $dbpass = ''; // // Your database password
     public static $dbhost = 'localhost'; // Your database host, 'localhost' is default.

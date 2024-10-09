@@ -32,6 +32,13 @@ include("functions_addons.php");
  */
  ?>
 <?php
+
+
+function hash_password($postdata, $primary){
+    $password = password_hash( $postdata->get('password'), PASSWORD_BCRYPT );
+    $postdata->set('password',  $password);
+}
+
 function publish_action($xcrud)
 {
     if ($xcrud->get('primary'))
@@ -56,24 +63,24 @@ function bulk_delete($xcrud)
 	$selected = $xcrud->get('selected');
 	$table = $xcrud->get('table');
 	$identifier = $xcrud->get('identifier');
-	$cnt = count($selected); 
-	
+	$cnt = count($selected);
+
 	$insertString = "";
 	$count = 0;
 	foreach($selected as $value){
 		$count++;
-		if($count == 1){	
-			$insertString .= $value; 
+		if($count == 1){
+			$insertString .= $value;
 		}else{
 			$insertString .= "," . $value;
-		}		
+		}
 	}
-	   
+
     $db = Xcrud_db::get_instance();
     $query = "DELETE from $table WHERE $identifier IN ($insertString)" ;
 	//echo $query;
     $db->query($query);
-   
+
     $xcrud->set_exception('Bulk Delete', 'You have Deleted ' . $cnt . ' items', 'error');
 	//$xcrud->set_exception('You have deleted ' . $cnt . ' items', 'error');
 }
